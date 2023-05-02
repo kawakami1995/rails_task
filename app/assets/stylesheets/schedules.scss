@@ -1,0 +1,87 @@
+// Place all the styles related to the schedules controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.container {
+  max-width: 980px;
+}
+
+.pageTop {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.index_table {
+  border-collapse: collapse;
+}
+
+.index_table th {
+  background-color: white;
+  padding: 10px 20px;
+  
+}
+
+.index_table td {
+  background-color: white;
+  padding: 10px 20px;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.notice {
+  background-color: #ccf;
+  padding: 5px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.link {
+  color: blue;
+  text-decoration: none;
+}
+
+.new_button {
+  color: white;
+  background-color: blue;
+  font-size: 20px;
+  padding: 10px 10px;
+}
+
+.check {
+  text-align: center;
+}
+
+.show_table td {
+  background-color: white;
+  padding: 10px 20px;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.edit_submit_link{
+  background-color: white;
+  color: blue;
+  border: none;
+  font-size: 16px;
+}
+
+.new_submit_link{
+  background-color: white;
+  color: blue;
+  border: none;
+  font-size: 16px;
+}
+
+.edit_submit_link:hover {
+  cursor: pointer;
+}
+
+.new_submit_link:hover {
+  cursor: pointer;
+}

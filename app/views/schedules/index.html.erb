@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="pageTop">
+    <h1>予定一覧</h1>
+    <%=link_to("/schedules/new") do %>
+      <button class="new_button" >新規追加</button>  
+    <%end%>
+  </div>
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+  <table class="index_table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>タイトル</th>
+        <th>開始日</th>
+        <th>終了日</th>
+        <th>終日</th>
+        <th>更新日時</th>
+      </tr>
+    </thead>  
+    <tbody>
+      <% @schedules.each do |schedule| %>
+        <tr>
+          <td><%= schedule.id %></td>
+          <td><%= schedule.title %></td>
+          <td><%= schedule.start_date.strftime("%Y/%m/%d") %></td>
+          <td><%= schedule.end_date.strftime("%Y/%m/%d") %></td>
+          <td>
+            <% if schedule.all_day == 1 %>
+              <%= schedule.all_day = "◯"%> 
+            <% end %>
+          </td>
+          <td><%= schedule.updated_at.to_s(:datetime_jp) %></td>
+          <td>
+            <%= link_to "詳細", schedule, class: "link" %>
+          </td>
+          <td>
+            <%= link_to "編集", [:edit, schedule], class: "link" %>
+          </td>
+          <td>
+            <%= link_to "削除", schedule, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "link" %>
+          </td>      
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="footer">
+    <p><%= "予定合計 #{@count}件" %>
+    <p><%= "本日の日付 #{@today}" %> 
+  </div>
+</div>
